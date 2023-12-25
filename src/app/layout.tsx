@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Yanone_Kaffeesatz } from "next/font/google";
+// import { Inter, Yanone_Kaffeesatz } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
-const yanone_kaffeesatz = Yanone_Kaffeesatz({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+// const inter = Inter({ subsets: ["latin"] });
+// const yanone_kaffeesatz = Yanone_Kaffeesatz({
+//   subsets: ["latin"],
+//   weight: ["400", "700"],
+// });
 
 export const metadata: Metadata = {
   title: "DevsSi",
@@ -19,8 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={yanone_kaffeesatz.className}>{children}</body>
+    <html lang="en" data-theme="dark">
+      <body>
+        <div className="container mx-auto">
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
